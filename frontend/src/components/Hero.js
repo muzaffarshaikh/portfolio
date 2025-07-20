@@ -79,7 +79,7 @@ const Hero = () => {
                 <span className="text-sm font-mono tracking-wide">{personalInfo.location}</span>
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-display font-bold leading-none">
+              <h1 className="text-5xl lg:text-7xl font-display font-bold leading-tight">
                 <span className="block text-foreground">
                   {personalInfo.name.split(' ')[0]}
                 </span>
