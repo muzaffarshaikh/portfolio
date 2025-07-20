@@ -129,61 +129,42 @@ const About = () => {
             ))}
           </motion.div>
 
-          {/* Certifications */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-foreground mb-4">
-                Professional Certifications
-              </h3>
-              <p className="body-medium text-muted-foreground">
-                Continuously learning and staying current with industry standards
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-card border border-border rounded-lg p-6 text-center space-y-3 hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <Award className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-foreground">
-                    {cert.name}
-                  </h4>
-                  <p className="body-small text-muted-foreground">
-                    {cert.issuer}
-                  </p>
-                  <p className="text-xs font-mono text-primary">
-                    Earned {cert.date}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Call to Action */}
           <motion.div 
             variants={itemVariants}
             className="text-center space-y-6 bg-card border border-border rounded-2xl p-8 lg:p-12"
           >
             <h3 className="text-2xl lg:text-3xl font-semibold text-foreground">
-              Ready to Build Something Amazing?
+              Let's Build Something Together
             </h3>
             <p className="body-large text-muted-foreground max-w-2xl mx-auto">
-              Let's discuss how I can help architect and build your next backend system.
-              From MVP to enterprise scale, I've got you covered.
+              Ready to discuss your next backend project? I'm here to help architect and build your next system.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="cta-button">
+              <a
+                href="#contact"
+                className="cta-button"
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Start a Conversation
-              </button>
-              <button className="cta-button cta-button-outline">
+              </a>
+              <a
+                href="#projects"
+                className="cta-button cta-button-outline"
+                onClick={() => {
+                  const element = document.querySelector('#projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 View My Projects
-              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>
