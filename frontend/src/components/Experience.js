@@ -177,13 +177,26 @@ const Experience = () => {
               can contribute to your next project.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="cta-button group">
+              <a
+                href="/resume.pdf"
+                download
+                className="cta-button group"
+              >
                 <span>Download Full Resume</span>
                 <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </button>
-              <button className="cta-button cta-button-outline">
+              </a>
+              <a
+                href="#contact"
+                className="cta-button cta-button-outline"
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Schedule a Call
-              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>
