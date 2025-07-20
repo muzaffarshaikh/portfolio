@@ -162,26 +162,13 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 p-4">
                 <img
                   src={personalInfo.avatar}
                   alt={personalInfo.name}
                   className="w-full h-full rounded-full object-cover border-4 border-background shadow-2xl"
                 />
-              </div>
-              
-              {/* Floating Tech Icons */}
-              <div className="absolute -top-4 -right-4 bg-card border border-border rounded-lg p-3 shadow-lg">
-                <div className="text-sm font-mono text-primary">NodeJS</div>
-              </div>
-              
-              <div className="absolute top-1/2 -left-8 bg-card border border-border rounded-lg p-3 shadow-lg">
-                <div className="text-sm font-mono text-primary">AWS</div>
-              </div>
-              
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-card border border-border rounded-lg p-3 shadow-lg">
-                <div className="text-sm font-mono text-primary">TypeScript</div>
               </div>
             </div>
           </motion.div>
