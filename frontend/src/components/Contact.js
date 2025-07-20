@@ -188,6 +188,8 @@ const Contact = () => {
 
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
+            {/* Contact Form */}
+            <motion.div variants={itemVariants}>
               <div className="bg-card border border-border rounded-2xl p-8 space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-semibold text-foreground">
@@ -312,6 +314,8 @@ const Contact = () => {
                   I typically respond within 24 hours. For urgent matters, feel free to call directly.
                 </div>
               </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
