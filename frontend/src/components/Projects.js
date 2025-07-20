@@ -272,14 +272,28 @@ const Projects = () => {
               Interested in seeing more of my work?
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="cta-button group">
+              <a
+                href="https://github.com/alexmorgan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button group"
+              >
                 <Github className="w-4 h-4 mr-2" />
                 <span>View GitHub Profile</span>
                 <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </button>
-              <button className="cta-button cta-button-outline">
+              </a>
+              <a
+                href="#contact"
+                className="cta-button cta-button-outline"
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Request Case Studies
-              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>
