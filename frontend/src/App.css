@@ -1,34 +1,370 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* BigFish Design System - Portfolio Implementation */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* CSS Variables following BigFish design system */
+:root {
+  /* Foundation Colors */
+  --color-black: #151515;
+  --color-white: #fff;
+  --color-dark-grey: #717171;
+  --color-mid-grey: #aaa;
+  --color-grey: #b6cbcb;
+  
+  /* Vibrant Brand Colors */
+  --color-dark-blue: #1f47e6;
+  --color-mid-blue: #88a2ff;
+  --color-light-blue: #b7fbff;
+  --color-mid-pink: #ff84e4;
+  --color-light-pink: #ffd1e7;
+  --color-mid-purple: #d987ff;
+  --color-mid-yellow: #ffe03d;
+  --color-light-yellow: #f6fd87;
+  --color-dark-orange: #d1903a;
+  --color-mid-orange: #ff965a;
+  --color-dark-green: #a1a500;
+  --color-mid-green: #78d692;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Global Styles */
+* {
+  box-sizing: border-box;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Typography System */
+.font-display {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.brand-display { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 800; 
+  font-size: clamp(4.5rem, 8vw, 10rem); 
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-heading { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 800; 
+  font-size: clamp(3rem, 6vw, 7rem); 
+  line-height: 1.1;
+}
+
+.section-heading { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 600; 
+  font-size: clamp(1.5rem, 4vw, 2.5rem); 
+  line-height: 1.125;
+}
+
+.card-heading { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 500; 
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem); 
+  line-height: 1.375;
+}
+
+.body-large { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 400; 
+  font-size: clamp(1rem, 2vw, 1.125rem); 
+  line-height: 1.45;
+}
+
+.body-medium { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 400; 
+  font-size: 1rem; 
+  line-height: 1.5;
+}
+
+.body-small { 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 400; 
+  font-size: 0.875rem; 
+  line-height: 1.55;
+}
+
+/* Component Library */
+
+/* Service Category Buttons - Rounded Tags */
+.service-button {
+  background: var(--color-mid-purple);
+  color: var(--color-black);
+  border: 1px solid var(--color-mid-purple);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-family: 'Inter', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.0875em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.service-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Navigation Links */
+.nav-link {
+  color: hsl(var(--foreground));
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  border-radius: 0px;
+  padding: 0;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: hsl(var(--primary));
+}
+
+/* CTA Buttons - Premium Style */
+.cta-button {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: 1px solid hsl(var(--primary));
+  border-radius: 9999px;
+  padding: 0.625rem 1.375rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.025em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background: hsl(var(--primary) / 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+}
+
+.cta-button:active {
+  transform: scale(0.98);
+}
+
+.cta-button-large {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.cta-button-outline {
+  background: transparent;
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--border));
+}
+
+.cta-button-outline:hover {
+  background: hsl(var(--secondary));
+  border-color: hsl(var(--primary));
+}
+
+/* Project Cards - Vibrant Showcase */
+.project-card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px hsl(var(--foreground) / 0.1);
+}
+
+/* Social Icon Links */
+.social-icon-link {
+  color: hsl(var(--muted-foreground));
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid hsl(var(--border));
+}
+
+.social-icon-link:hover {
+  color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.1);
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+/* Animation Classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background Patterns */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+  
+  .section-heading {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+  }
+  
+  .cta-button {
+    width: 100%;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  }
 }
 
-.App-link {
-    color: #61dafb;
+/* Color Variants */
+.bg-mid-blue { background-color: var(--color-mid-blue); }
+.bg-mid-purple { background-color: var(--color-mid-purple); }
+.bg-light-yellow { background-color: var(--color-light-yellow); }
+.bg-mid-orange { background-color: var(--color-mid-orange); }
+.bg-mid-green { background-color: var(--color-mid-green); }
+.bg-light-pink { background-color: var(--color-light-pink); }
+
+/* Skill Bar Animations */
+.skill-bar {
+  height: 8px;
+  background: hsl(var(--secondary));
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.7));
+  border-radius: 4px;
+  transform-origin: left;
+  animation: fillSkill 1.5s ease-out forwards;
+}
+
+@keyframes fillSkill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Timeline Styles */
+.timeline-line {
+  position: relative;
+}
+
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--primary) / 0.3));
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  border: 3px solid hsl(var(--background));
+  box-shadow: 0 0 0 2px hsl(var(--primary));
+}
+
+/* Smooth Transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Focus Styles */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Loading States */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid hsl(var(--secondary));
+  border-top: 2px solid hsl(var(--primary));
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
