@@ -312,49 +312,6 @@ const Contact = () => {
                   I typically respond within 24 hours. For urgent matters, feel free to call directly.
                 </div>
               </div>
-            </motion.div>
-          </div>
-
-          {/* FAQ Section */}
-          <motion.div variants={itemVariants} className="space-y-8">
-            <h3 className="text-2xl font-semibold text-foreground text-center">
-              Frequently Asked Questions
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-card border border-border rounded-lg p-6 space-y-3">
-                <h4 className="font-semibold text-foreground">What's your typical project timeline?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Project timelines vary based on complexity, but typical backend projects range from 2-8 weeks. 
-                  I provide detailed estimates after understanding your requirements.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-lg p-6 space-y-3">
-                <h4 className="font-semibold text-foreground">Do you work on existing systems?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Absolutely! I help optimize, scale, and modernize existing backend systems. 
-                  I can also provide code reviews and architecture consultations.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-lg p-6 space-y-3">
-                <h4 className="font-semibold text-foreground">What about ongoing support?</h4>
-                <p className="text-sm text-muted-foreground">
-                  I offer maintenance and support packages for systems I build. 
-                  This includes monitoring, updates, and performance optimization.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border rounded-lg p-6 space-y-3">
-                <h4 className="font-semibold text-foreground">Remote work availability?</h4>
-                <p className="text-sm text-muted-foreground">
-                  Yes, I work remotely with clients worldwide. I'm comfortable with async communication 
-                  and can accommodate different time zones for meetings.
-                </p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
