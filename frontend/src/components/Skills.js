@@ -202,7 +202,7 @@ const Skills = () => {
             </div>
           </motion.div>
 
-          {/* Continuous Learning CTA */}
+          {/* Call to Action */}
           <motion.div 
             variants={itemVariants}
             className="text-center space-y-6 bg-card border border-border rounded-2xl p-8 lg:p-12"
@@ -215,12 +215,18 @@ const Skills = () => {
               Currently exploring Rust, WebAssembly, and advanced Kubernetes patterns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="cta-button">
+              <a
+                href="#contact"
+                className="cta-button"
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Let's Build Something Together
-              </button>
-              <button className="cta-button cta-button-outline">
-                View Certifications
-              </button>
+              </a>
             </div>
           </motion.div>
         </motion.div>
