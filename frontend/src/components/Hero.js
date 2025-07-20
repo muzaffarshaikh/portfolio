@@ -119,15 +119,28 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="cta-button cta-button-large group">
+              <a
+                href="#projects"
+                className="cta-button cta-button-large group"
+                onClick={() => {
+                  const element = document.querySelector('#projects');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <span>View My Work</span>
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </button>
+              </a>
               
-              <button className="cta-button cta-button-outline group">
+              <a
+                href="/resume.pdf"
+                download
+                className="cta-button cta-button-outline group"
+              >
                 <Download className="w-4 h-4 mr-2" />
                 <span>Download Resume</span>
-              </button>
+              </a>
             </motion.div>
 
             <motion.div 
